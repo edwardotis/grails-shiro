@@ -12,15 +12,15 @@ buildscript {
 }
 
 plugins {
-    id "io.spring.dependency-management" version "0.5.2.RELEASE"
-    id "com.jfrog.bintray" version "1.2"
+    id "io.spring.dependency-management" version "0.5.6.RELEASE"
+    id "com.jfrog.bintray" version "1.6"
 }
 
-version "0.1-SNAPSHOT"
+version "3.1.0-SNAPSHOT"
 group "org.grails.plugins"
 
 apply plugin: 'maven-publish'
-apply plugin: 'eclipse'
+//apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "spring-boot"
 apply plugin: "org.grails.grails-plugin"
@@ -42,8 +42,8 @@ ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 
 repositories {
@@ -72,8 +72,8 @@ dependencies {
     testCompile "org.grails:grails-plugin-testing"
 
     console "org.grails:grails-console"
-    def shiroVersion = '1.2.3'
-    compile ("org.apache.shiro:shiro-core:$shiroVersion") {
+    def shiroVersion = '1.2.4'
+    compile ("org.apache.shiro:shiro-all:$shiroVersion") {
         exclude module:'ejb'
         exclude module:'jsf-api'
         exclude module:'servlet-api'
@@ -85,57 +85,57 @@ dependencies {
         exclude module:'slf4j-api'
         exclude module:'commons-logging'
     }
-    compile ("org.apache.shiro:shiro-web:$shiroVersion") {
-        exclude module:'ejb'
-        exclude module:'jsf-api'
-        exclude module:'servlet-api'
-        exclude module:'jsp-api'
-        exclude module:'jstl'
-        exclude module:'jms'
-        exclude module:'connector-api'
-        exclude module:'ehcache-core'
-        exclude module:'slf4j-api'
-        exclude module:'commons-logging'
-    }
-    compile ("org.apache.shiro:shiro-spring:$shiroVersion") {
-        exclude module:'ejb'
-        exclude module:'jsf-api'
-        exclude module:'servlet-api'
-        exclude module:'jsp-api'
-        exclude module:'jstl'
-        exclude module:'jms'
-        exclude module:'connector-api'
-        exclude module:'ehcache-core'
-        exclude module:'slf4j-api'
-        exclude module:'commons-logging'
-    }
-    compile ("org.apache.shiro:shiro-ehcache:$shiroVersion") {
-        exclude module:'ejb'
-        exclude module:'jsf-api'
-        exclude module:'servlet-api'
-        exclude module:'jsp-api'
-        exclude module:'jstl'
-        exclude module:'jms'
-        exclude module:'connector-api'
-        exclude module:'ehcache-core'
-        exclude module:'slf4j-api'
-        exclude module:'commons-logging'
-    }
-    compile ("org.apache.shiro:shiro-quartz:$shiroVersion") {
-        exclude module:'ejb'
-        exclude module:'jsf-api'
-        exclude module:'servlet-api'
-        exclude module:'jsp-api'
-        exclude module:'jstl'
-        exclude module:'jms'
-        exclude module:'connector-api'
-        exclude module:'ehcache-core'
-        exclude module:'slf4j-api'
-        exclude module:'commons-logging'
-    }
-    // runtime "org.grails.plugins:hibernate:$grailsVersion", {
-    //     export = false
-    // }
+//    compile ("org.apache.shiro:shiro-web:$shiroVersion") {
+//        exclude module:'ejb'
+//        exclude module:'jsf-api'
+//        exclude module:'servlet-api'
+//        exclude module:'jsp-api'
+//        exclude module:'jstl'
+//        exclude module:'jms'
+//        exclude module:'connector-api'
+//        exclude module:'ehcache-core'
+//        exclude module:'slf4j-api'
+//        exclude module:'commons-logging'
+//    }
+//    compile ("org.apache.shiro:shiro-spring:$shiroVersion") {
+//        exclude module:'ejb'
+//        exclude module:'jsf-api'
+//        exclude module:'servlet-api'
+//        exclude module:'jsp-api'
+//        exclude module:'jstl'
+//        exclude module:'jms'
+//        exclude module:'connector-api'
+//        exclude module:'ehcache-core'
+//        exclude module:'slf4j-api'
+//        exclude module:'commons-logging'
+//    }
+//    compile ("org.apache.shiro:shiro-ehcache:$shiroVersion") {
+//        exclude module:'ejb'
+//        exclude module:'jsf-api'
+//        exclude module:'servlet-api'
+//        exclude module:'jsp-api'
+//        exclude module:'jstl'
+//        exclude module:'jms'
+//        exclude module:'connector-api'
+//        exclude module:'ehcache-core'
+//        exclude module:'slf4j-api'
+//        exclude module:'commons-logging'
+//    }
+//    compile ("org.apache.shiro:shiro-quartz:$shiroVersion") {
+//        exclude module:'ejb'
+//        exclude module:'jsf-api'
+//        exclude module:'servlet-api'
+//        exclude module:'jsp-api'
+//        exclude module:'jstl'
+//        exclude module:'jms'
+//        exclude module:'connector-api'
+//        exclude module:'ehcache-core'
+//        exclude module:'slf4j-api'
+//        exclude module:'commons-logging'
+//    }
+//    // runtime "org.grails.plugins:hibernate:$grailsVersion", {
+//    //     export = false
+//    // }
 }
 
 task wrapper(type: Wrapper) {

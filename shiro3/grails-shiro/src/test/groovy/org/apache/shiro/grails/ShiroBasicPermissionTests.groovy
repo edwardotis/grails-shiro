@@ -1,16 +1,18 @@
 package org.apache.shiro.grails
 
 import org.apache.shiro.authz.Permission
+import org.junit.Test
 
 /**
  * Test case for {@link ShiroBasicPermission}.
  */
-class ShiroBasicPermissionTests extends GroovyTestCase {
+class ShiroBasicPermissionTests {
     /**
      * Tests that {@link ShiroBasicPermission#getActions()} returns
      * the expected values with permission instances created via
      * different constructor arguments.
      */
+    @Test
     void testActionsSet() {
         def testPermission = new ShiroBasicPermission('book', [ 'view', 'modify', 'create', 'delete' ])
         assert testPermission.actions == [ 'view', 'modify', 'create', 'delete' ] as Set
@@ -35,6 +37,7 @@ class ShiroBasicPermissionTests extends GroovyTestCase {
      * the expected standard string with permission instances created
      * via different constructor arguments.
      */
+    @Test
     void testActionsString() {
         def testPermission = new ShiroBasicPermission('book', [ 'view', 'modify', 'create', 'delete' ])
         def splitString = Arrays.asList(testPermission.actionsString.split(/,/)) as Set
@@ -62,6 +65,7 @@ class ShiroBasicPermissionTests extends GroovyTestCase {
      * returns the correct value when used to compare a variety of
      * different permissions.
      */
+    @Test
     void testImplies() {
         def requiredPermission = new ShiroBasicPermission('book', [ 'delete' ])
 
