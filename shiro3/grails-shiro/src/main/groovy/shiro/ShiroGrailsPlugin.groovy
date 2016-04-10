@@ -286,6 +286,7 @@ Enables Grails applications to take advantage of the Apache Shiro security layer
             }
         }
 
+        //TODO this breaks 3.1. Filters have been replaced with interceptors
         grailsApplication.filtersClasses.each { filterClass ->
             filterClass.clazz.metaClass.getRoleMap = { String controller -> return roleMaps[controller] }
             filterClass.clazz.metaClass.getPermissionMap = { String controller -> return permMaps[controller] }
