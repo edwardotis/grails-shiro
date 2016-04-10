@@ -64,8 +64,8 @@ import static javax.servlet.DispatcherType.*
 
 class ShiroGrailsPlugin extends Plugin {
 
-    def version = "1.2.2-SNAPSHOT"
-    def grailsVersion = "1.2 > *"
+    def version = "1.2.4-SNAPSHOT"
+    def grailsVersion = "3.0 > *"
     def author = "Peter Ledbrook"
     def authorEmail = "peter@cacoethes.co.uk"
     def title = "Apache Shiro Integration for Grails"
